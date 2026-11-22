@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to check if your Shopify store is accessible (ADA &amp; WCAG): a 20-minute self-check</title>
+<meta name="description" content="A practical 20-minute accessibility self-check for Shopify store owners: free tools to run, the 6 issues most often found and how to fix them in Shopify, plus a quick keyboard and screen-reader test.">
+<link rel="canonical" href="https://businessfouzi-sys.github.io/shopify-accessibility-report/shopify-accessibility-check.html">
+<style>
+  :root{--ink:#1f2933;--muted:#4a5560;--accent:#0b5d7a;--line:#d9dee3;--soft:#f4f7f9}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+  main{max-width:760px;margin:0 auto;padding:28px 20px 56px}
+  h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.2;margin:.3em 0 .4em}
+  h2{font-size:1.35rem;margin:2em 0 .5em;line-height:1.3}
+  h3{font-size:1.08rem;margin:1.4em 0 .3em}
+  p,li{font-size:1.02rem}
+  a{color:var(--accent)}
+  a:focus-visible{outline:3px solid #f0b400;outline-offset:2px}
+  .meta{color:var(--muted);font-size:.9rem}
+  .box{background:var(--soft);border-radius:10px;padding:14px 18px;margin:18px 0}
+  .cta{border:2px solid var(--accent);border-radius:10px;padding:16px 20px;margin:28px 0}
+  code{background:#eef1f4;padding:1px 5px;border-radius:4px;font-size:.92em}
+  table{border-collapse:collapse;width:100%;margin:10px 0;font-size:.95rem}
+  th,td{border-bottom:1px solid var(--line);text-align:left;padding:8px 6px;vertical-align:top}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:14px;font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <p class="meta">Guide for Shopify store owners · Updated November 2026 · 8-minute read</p>
+  <h1>How to check if your Shopify store is accessible: a 20-minute self-check</h1>
+  <p>You don't need to be a developer to find the most common accessibility problems on a Shopify store. This guide walks you through free tools, the issues they usually find, where to fix each one in Shopify, and the two quick manual tests that no tool can do for you.</p>
+  <div class="box"><strong>Important:</strong> this guide helps you find and fix common barriers. It is not legal advice, and passing these checks does not make a store "ADA compliant". For legal certainty, talk to a qualified accessibility auditor or a lawyer.</div>
+
+  <h2>Why it's worth 20 minutes</h2>
+  <p>Accessibility problems lose you customers: people with low vision, older shoppers, keyboard users and anyone reading on a phone in bright light. They are also a legal risk in the US. The law firm Seyfarth Shaw counted <a href="https://www.adatitleiii.com/?p=5646">5,006 federal ADA Title III lawsuits in the first half of 2026</a>, and website cases are a growing share of them. UsableNet, which tracks these cases, reports that most website and app lawsuits target companies with less than $50 million in yearly revenue (<a href="https://krdo.com/news/2026/10/15/website-accessibility-lawsuits-are-rising-and-smaller-businesses-are-frequent-targets/">KRDO</a>), and that many lawsuits <a href="https://blog.usablenet.com/ada-web-lawsuit-trends-2026">name stores that already had an accessibility widget installed</a>.</p>
+
+  <h2>Step 1 · Run a free automated check (5 minutes)</h2>
+  <p>Pick one page of each type: your home page, a collection, a product page, the cart and your contact page. Shopify themes reuse the same templates, so one page of each type shows most problems. Then use any of these free tools:</p>
+  <ul>
+    <li><strong>WAVE</strong> by WebAIM: paste your page address at <a href="https://wave.webaim.org/">wave.webaim.org</a>.</li>
+    <li><strong>Lighthouse</strong>, built into Chrome: right-click the page › <em>Inspect</em> › <em>Lighthouse</em> › tick <em>Accessibility</em> › <em>Analyze page load</em>.</li>
+    <li><strong>axe DevTools</strong>, a free browser extension from Deque.</li>
+  </ul>
+  <p>Automated tools are a good first pass. In a large study, Deque found that automated tests caught about <a href="https://www.deque.com/automated-accessibility-coverage-report/">57% of the accessibility issues</a> found in full audits. The rest need a human, which is why steps 3 and 4 matter.</p>
+
+  <h2>Step 2 · Fix the 6 issues tools find most often on Shopify stores</h2>
+
+  <h3>1. Images without a text description (alt text)</h3>
+  <p><strong>What it means for shoppers:</strong> screen-reader users hear nothing, or a file name, so they can't tell which product they're looking at.</p>
+  <p><strong>Fix in Shopify:</strong> <em>Products</em> › open a product › click the image › <em>Add alt text</em>. Describe what matters to a buyer ("Brown leather tote bag, front view"). Decorative images can stay empty. For images placed in theme sections, set the alt text where your theme stores the image (often <em>Content › Files</em>).</p>
+
+  <h3>2. Text that is too light (color contrast)</h3>
+  <p><strong>What it means:</strong> pale grey prices, white text on light buttons and faint footer links are hard to read for many people.</p>
+  <p><strong>Fix:</strong> <em>Online Store › Themes › Customize › Theme settings › Colors</em>. Normal text needs a contrast ratio of at least <strong>4.5:1</strong> with its background (3:1 for large text). WebAIM's free <a href="https://webaim.org/resources/contrastchecker/">contrast checker</a> tells you whether a color pair passes.</p>
+
+  <h3>3. Icon links and buttons with no name</h3>
+  <p><strong>What it means:</strong> the cart, search or social icons are announced as just "link" or "button".</p>
+  <p><strong>Fix:</strong> most of these live in your theme's header and footer, so one edit fixes every page. The link needs a text label, for example <code>aria-label="Cart"</code>. If you don't edit code, ask your theme developer for this specific change.</p>
+
+  <h3>4. Form fields without labels</h3>
+  <p><strong>What it means:</strong> quantity boxes, discount codes and newsletter sign-ups are announced without saying what to type. Fields labelled only by greyed-out placeholder text are a problem too, because the hint disappears as soon as someone types.</p>
+  <p><strong>Fix:</strong> every field needs a real label. Many themes include a hidden "Quantity" label; check it hasn't been removed by an app or customization.</p>
+
+  <h3>5. Headings that skip levels</h3>
+  <p><strong>What it means:</strong> screen-reader users navigate by headings; jumping from a level-2 to a level-4 heading makes them think they missed a section.</p>
+  <p><strong>Fix:</strong> keep one main heading per page and use levels in order. Change how a heading looks with your theme's style settings, not by picking a smaller heading level.</p>
+
+  <h3>6. Embedded content without a title</h3>
+  <p><strong>What it means:</strong> maps, videos and some app widgets load inside a frame that screen readers announce without saying what it contains.</p>
+  <p><strong>Fix:</strong> give each frame a short title ("Map to our shop"). For app widgets, ask the app developer.</p>
+
+  <h2>Step 3 · The 5-minute keyboard test</h2>
+  <p>Put your mouse aside and use only <strong>Tab</strong>, <strong>Shift+Tab</strong>, <strong>Enter</strong>, <strong>Space</strong> and the arrow keys:</p>
+  <ul>
+    <li>Can you see where you are at every step (a visible outline around the focused item)?</li>
+    <li>Can you open the menu, choose a product variant, add it to the cart and reach checkout?</li>
+    <li>Can you close pop-ups (newsletter, cookie banner) with the keyboard, and does focus never get stuck?</li>
+  </ul>
+  <p>If any step fails, note the page and the element: that's a high-priority fix, because it blocks some customers from buying at all.</p>
+
+  <h2>Step 4 · A quick screen-reader check</h2>
+  <p>On a Mac, press <strong>Cmd+F5</strong> to turn VoiceOver on and off. On Windows, the free screen reader <a href="https://www.nvaccess.org/">NVDA</a> takes a few minutes to install. Listen to your product page: is the product name announced, the price, the variant choice, the "Add to cart" button? You don't need to master the tool to notice when something is silent or confusing.</p>
+
+  <h2>What about accessibility widgets and overlays?</h2>
+  <p>Widgets that add a toolbar to your store don't fix the underlying code, and lawsuits have named stores that already used them. Fixing the actual issues in your theme is the reliable route.</p>
+
+  <h2>When to get professional help</h2>
+  <p>If you've received a demand letter, sell to the public sector, or your checks turned up many keyboard or screen-reader problems, a full manual audit by a qualified accessibility professional is worth it.</p>
+
+  <div class="cta">
+    <h2 style="margin-top:0">Want this done for you?</h2>
+    <p>We're preparing an automated accessibility report for Shopify stores: up to 25 pages scanned, every issue our automated tests detect listed with the page, what it means for your shoppers and how to fix it in Shopify, delivered as a PDF and a CSV. Planned price: <strong>$39</strong>. It's not available yet.</p>
+    <p><a href="./">See a sample and get notified when it launches →</a></p>
+  </div>
+
+  <footer>
+    <p>Published by Fouzi Business, an individual based in France. Contact: <a href="mailto:businessfouzi@gmail.com">businessfouzi@gmail.com</a>. Hosted by GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). This page sets no cookies and uses no tracking tools. This guide is general information, not legal advice.</p>
+  </footer>
+</main>
+</body>
+</html>
