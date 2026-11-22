@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopify accessibility report – $39 at launch</title>
+<meta name="description" content="A plain-English accessibility report for your Shopify store: every problem, the page it's on, what it means for your shoppers and the exact fix. $39 at launch.">
+<style>
+  :root{--ink:#1f2933;--muted:#4a5560;--accent:#0b5d7a;--accent-dark:#084a61;--line:#d9dee3;--soft:#f4f7f9;--bad:#a12b1f;--good:#1d6b3a}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.55;background:#fff}
+  .preview{background:#fff4cc;color:#5c4400;border-bottom:1px solid #e6cf73;padding:8px 20px;font-size:.9rem;text-align:center}
+  main{max-width:1040px;margin:0 auto;padding:28px 20px 56px}
+  h1{font-size:clamp(1.7rem,4.2vw,2.6rem);line-height:1.15;margin:.2em 0 .35em;letter-spacing:-.01em}
+  h2{font-size:1.35rem;margin:2.2em 0 .6em}
+  p{margin:.5em 0}
+  .lead{font-size:1.1rem;color:var(--muted);max-width:44em}
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0 12px}
+  figure{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--soft)}
+  figure img{display:block;width:100%;height:auto}
+  figcaption{padding:10px 14px;font-size:.92rem}
+  .tag{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-right:6px}
+  .tag.before{background:#fde8e6;color:var(--bad)} .tag.after{background:#e3f3e8;color:var(--good)}
+  .gain{font-size:1.08rem;border-left:4px solid var(--accent);padding:6px 0 6px 14px;margin:14px 0 4px;max-width:46em}
+  .note{font-size:.85rem;color:var(--muted)}
+  .grid2{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+  .card{border:1px solid var(--line);border-radius:10px;padding:20px 22px;background:#fff}
+  .price{font-size:2.6rem;font-weight:800;line-height:1;margin:0}
+  .price small{font-size:1rem;font-weight:600;color:var(--muted)}
+  ul.list{padding-left:1.15em;margin:.4em 0} ul.list li{margin:.35em 0}
+  .sample{margin-top:14px}
+  form .field{margin:14px 0}
+  label,legend{font-weight:600;display:block;margin-bottom:4px}
+  .hint{font-weight:400;color:var(--muted);font-size:.9rem}
+  input[type=email],input[type=url]{width:100%;padding:12px;border:1px solid #8a959f;border-radius:8px;font-size:1rem}
+  fieldset{border:0;padding:0;margin:14px 0}
+  .radios label{display:inline-flex;align-items:center;gap:6px;font-weight:400;margin:4px 16px 4px 0}
+  input:focus-visible,button:focus-visible{outline:3px solid #f0b400;outline-offset:2px}
+  button{width:100%;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:15px 18px;font-size:1.05rem;font-weight:700;cursor:pointer}
+  button:hover{background:var(--accent-dark)}
+  .small{font-size:.85rem;color:var(--muted)}
+  #status{margin-top:12px;font-weight:600}
+  .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+  .limits{background:var(--soft);border-radius:10px;padding:16px 20px;margin-top:28px}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;font-size:.85rem;color:var(--muted)}
+  @media (max-width:760px){
+    main{padding:20px 16px 44px}
+    .ba,.grid2{grid-template-columns:1fr}
+    .price{font-size:2.2rem}
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <p class="note">Accessibility report for Shopify stores · launching soon</p>
+  <h1>Find what your shoppers can't read or use, and how to fix it.</h1>
+  <p class="lead">When it launches, we'll scan your Shopify store and send you a report on every problem our automated tests detect: the page it's on, what it means for your shoppers and how to fix it.</p>
+
+  <section aria-labelledby="ba-title">
+    <h2 id="ba-title" style="margin-top:1.2em">Before and after, from a sample report</h2>
+    <div class="ba">
+      <figure>
+        <img src="./before.jpg" width="1000" height="320" alt="Before: a pale beige tagline and a white 'Shop now' label on a light tan button, both hard to read.">
+        <figcaption><span class="tag before">Before</span>Tagline contrast 1.57:1, button 1.93:1</figcaption>
+      </figure>
+      <figure>
+        <img src="./after.jpg" width="1000" height="320" alt="After: the same tagline in dark brown and the 'Shop now' label in dark grey, both clearly readable.">
+        <figcaption><span class="tag after">After</span>Tagline 4.62:1, button 4.52:1, using the colors the report suggested</figcaption>
+      </figure>
+    </div>
+    <p class="gain"><strong>What your shoppers gain:</strong> people with low vision, older shoppers and anyone on a phone in bright sunlight can now read your tagline and see your “Shop now” button.</p>
+    <p class="note">Fictional demo store. Ratios measured by our scan; accessibility guidelines (WCAG 2.2 AA) ask for at least 4.5:1 for normal text.</p>
+  </section>
+
+  <div class="grid2">
+    <section class="card" aria-labelledby="price-title">
+      <h2 id="price-title" style="margin-top:0">Planned launch price</h2>
+      <p class="price">$39 <small>one-time, per store</small></p>
+      <p class="small">We're not taking orders yet. No payment now.</p>
+
+      <form id="notify" novalidate>
+        <!-- Connection: set ENDPOINT in the script at the bottom of this page -->
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint">
+          <span id="email-hint" class="hint">We'll email you once, when the report launches.</span>
+        </div>
+        <div class="field">
+          <label for="store">Your store address <span class="hint">(optional)</span></label>
+          <input id="store" name="store" type="url" inputmode="url" placeholder="https://yourstore.com">
+        </div>
+        <fieldset class="radios">
+          <legend>Would you pay $39 for this report today? <span class="hint">(optional)</span></legend>
+          <label><input type="radio" name="would_pay" value="yes"> Yes</label>
+          <label><input type="radio" name="would_pay" value="maybe"> Maybe</label>
+          <label><input type="radio" name="would_pay" value="no"> No</label>
+        </fieldset>
+        <div class="hp" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" data-track="notify_click">Notify me when the $39 report launches</button>
+        <p class="small">By signing up you agree to receive one email about the launch. You can unsubscribe at any time (see Privacy below).</p>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section aria-labelledby="get-title">
+      <h2 id="get-title">What you'll receive</h2>
+      <ul class="list">
+        <li><strong>A PDF report</strong>, sorted by priority. For each problem: the page, what it means for your visitors, and the fix, with the steps in your Shopify theme and replacement colors when text is too light.</li>
+        <li><strong>A CSV file</strong> listing every element found, so you or your developer can work through it.</li>
+      </ul>
+      <p><strong>Planned at launch:</strong> a scan of up to 25 pages of your store.</p>
+      <figure class="sample">
+        <img src="./sample.jpg" width="1031" height="930" alt="Excerpt from a sample report: issue 4, text too light to read. A table lists each place it occurs, the measured contrast, and a suggested replacement color, for example 'use #9c9184' for footer links.">
+        <figcaption class="note">Excerpt from a sample report (fictional demo store).</figcaption>
+      </figure>
+    </section>
+
+  </div>
+
+  <section class="limits" aria-labelledby="limits-title">
+    <h2 id="limits-title" style="margin:0 0 .3em">What this report is not</h2>
+    <p>Automated tests catch many common barriers but not all of them: keyboard use, screen-reader flow and the quality of image descriptions need a human tester. The report is a prioritized starting point, not a certificate of compliance or legal advice.</p>
+  </section>
+
+  <footer>
+    <h2 style="font-size:1rem;margin:0 0 .4em">Legal notice</h2>
+    <p>This page is published by Fouzi Business, an individual based in France. Contact: <a href="mailto:businessfouzi@gmail.com">businessfouzi@gmail.com</a>. Hosted by GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA).</p>
+    <h2 style="font-size:1rem;margin:1em 0 .4em">Privacy</h2>
+    <p><strong>What we collect:</strong> your email address, and, if you choose to give them, your store address and your answer to the price question.
+    <strong>Why:</strong> to send you one confirmation email and one email when the report launches, and to measure interest in the report.
+    <strong>Legal basis:</strong> your consent, which you can withdraw at any time.
+    <strong>Where it is kept:</strong> in a Google Sheets spreadsheet in our Google account; emails are sent with Gmail (Google).
+    <strong>How long:</strong> until the launch email is sent, and in any case no longer than 12 months, unless you ask us to delete it sooner.
+    We never sell or share your data. You can ask to see, correct or delete it, or unsubscribe, by replying to any of our emails or writing to the address above. You may also complain to your data protection authority (in France, the CNIL).
+    This page sets no cookies and uses no tracking tools.</p>
+  </footer>
+</main>
+
+<script>
+/* ENDPOINT = the Google Apps Script "Web app" URL (ends with /exec).
+   Empty = SIMULATED: nothing is sent or stored. Sign-ups are counted separately from sales.
+   The page only reports success when the script answers; otherwise it says it could not verify. */
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbwWLiKJbRIGnJqXacKEC6ihpOjRubSSk8I6GIqW7QHiH5IwvOy28VB0BIGTLFQ-T-6k/exec";
+(function(){
+  var f=document.getElementById('notify'), s=document.getElementById('status'), e=document.getElementById('email'), b=f.querySelector('button');
+  function wait(n){ return n ? ' Please try again in ' + n + ' minute' + (n>1?'s':'') + '.' : ''; }
+  var MSG = {
+    confirmation_sent:   function(r,m){ return 'Done: you are on the launch list. We just emailed ' + m + ' a confirmation link. Please click it (check your spam folder too).'; },
+    confirmation_resent: function(r,m){ return 'You were already on the list. We sent the confirmation email to ' + m + ' again.'; },
+    already_pending:     function(r){ return 'You are already on the list. Your confirmation email was sent recently: check your inbox and spam folder.' + (r.retry_after_min ? ' You can ask for a new one in ' + r.retry_after_min + ' minute' + (r.retry_after_min>1?'s':'') + '.' : ''); },
+    already_confirmed:   function(){ return 'You are already confirmed. We will email you when the report launches.'; },
+    email_failed:        function(r){ return 'You are on the list, but we could not send the confirmation email right now.' + wait(r.retry_after_min); },
+    email_failed_final:  function(){ return 'You are on the list, but we could not send the confirmation email. We will not retry automatically.'; },
+    invalid_email:       function(){ return 'Please enter a valid email address.'; },
+    test_mode_only:      function(){ return 'Test mode: only the owner\'s address is accepted for now. Nothing was saved or sent.'; },
+    busy:                function(r){ return 'We are busy right now.' + wait(r.retry_after_min || 1); }
+  };
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    if(!e.value || !e.checkValidity()){ s.textContent='Please enter a valid email address.'; e.focus(); return; }
+    if(!/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(ENDPOINT)){
+      s.textContent='Preview only: your details were not sent. When this page goes live, you will receive a confirmation email.'; return; }
+    var mail=e.value.trim(), data=new URLSearchParams(new FormData(f));
+    b.disabled=true; s.textContent='Sending…';
+    fetch(ENDPOINT,{method:'POST',body:data})
+      .then(function(res){ if(!res.ok) throw new Error('HTTP '+res.status); return res.json(); })
+      .then(function(r){
+        var m = MSG[r && r.result];
+        s.textContent = m ? m(r, mail) : 'Sorry, something went wrong on our side. Please try again later.';
+        if (r && r.ok && r.result !== 'already_pending') f.reset();
+      })
+      .catch(function(){ s.textContent='We could not confirm that your sign-up was received. Please try again in a few minutes.'; })
+      .finally(function(){ b.disabled=false; });
+  });
+})();
+</script>
+</body>
+</html>
